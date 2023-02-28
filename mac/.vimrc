@@ -12,8 +12,8 @@ set number
 "imap <ESC>d <C-o>dw
 
 " Ctrl-PgUp and Ctrl-PgDn switch buffer
-map <ESC>[5;5~ :bn<CR>
-map <ESC>[6;5~ :bp<CR>
+map <ESC>[5~ :bn<CR>
+map <ESC>[6~ :bp<CR>
 
 " Remap arrow keys
 map <ESC>[1;5A 5k
