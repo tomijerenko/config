@@ -31,12 +31,6 @@ imap <ESC>[1;5B <C-o>5j
 imap <ESC>[1;5D <C-o>b
 imap <ESC>[1;5C <C-o>e
 
-" FZF
-"nmap <C-P> :FZF<CR>
-
-" git-blame
-"nnoremap <Leader>s :<C-u>call gitblame#echo()<CR>
-
 " disable syntax when using vimdiff
 if &diff
   hi DiffAdd     ctermbg=236
@@ -46,15 +40,24 @@ if &diff
   " colorscheme desert
 endif
 
+" Download and install plugins
+call plug#begin()
 
-" Rust
-"let g:rustfmt_autosave = 1
-"" Syntastic
-"set statusline+=%#warningmsg#
-"set statusline+=%{SyntasticStatuslineFlag()}
-"set statusline+=%*
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'rust-lang/rust.vim'
+Plug 'dense-analysis/ale'
 
-"let g:syntastic_always_populate_loc_list = 1
-"let g:syntastic_auto_loc_list = 1
-"let g:syntastic_check_on_open = 1
-"let g:syntastic_check_on_wq = 0
+call plug#end()
+
+" Config for Rust
+let g:rustfmt_autosave = 1
+let g:rustfmt_emit_files = 1
+let g:rustfmt_fail_silently = 0
+
+" Plugin Configurations
+" FZF
+nmap <C-P> :FZF<CR>
+
+" git-blame
+"nnoremap <Leader>s :<C-u>call gitblame#echo()<CR>
+
