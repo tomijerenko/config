@@ -46,3 +46,4 @@ sync_backup_disks () {
 
 alias k="kubectl "
 alias randomstring='dd if=/dev/urandom bs=50 count=1 status=none | base64'
+alias clipboard="xclip -selection clipboard"
