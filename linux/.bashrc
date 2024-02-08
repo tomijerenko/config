@@ -122,8 +122,6 @@ if ! shopt -oq posix; then
   fi
 fi
 
-# Rust
-. "$HOME/.cargo/env"
 # GO
 export PATH=$PATH:/usr/local/go/bin
 export EDITOR=vim

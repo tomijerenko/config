@@ -28,8 +28,6 @@ noremap <Leader>p "*p
 noremap <Leader>Y "+y
 noremap <Leader>P "+p
 
-nnoremap <Leader>o :CtrlP<CR>
-
 " disable syntax when using vimdiff
 if &diff
   hi DiffAdd     ctermbg=236
