@@ -2,7 +2,7 @@
 syntax enable
 filetype plugin indent on
 set number 
-nnoremap <Space> <NOP>
+noremap <Space> <NOP>
 let mapleader = "\<Space>"
 
 " Ctrl-PgUp and Ctrl-PgDn switch buffer
@@ -23,10 +23,9 @@ inoremap <ESC>[1;5C <C-o>e
 inoremap <ESC>D <C-o>dw
 
 " Copy/paste to/from system clipboard
-noremap <Leader>y "*y
-noremap <Leader>p "*p
-noremap <Leader>Y "+y
-noremap <Leader>P "+p
+noremap <Leader>y "+y
+noremap <Leader>p "+p
+noremap <Leader>w :w<CR>
 
 " disable syntax when using vimdiff
 if &diff
@@ -40,6 +39,7 @@ endif
 call plug#begin()
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'dense-analysis/ale'
+Plug 'codercooke/vim-chatgpt'
 call plug#end()
 
 " Plugin Configurations
