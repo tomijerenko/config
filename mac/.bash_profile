@@ -27,3 +27,28 @@ alias ll='ls -la'
 alias la='ls -A'
 alias k='kubectl '
 alias randomstring='dd if=/dev/urandom bs=50 count=1 status=none | base64'
+alias shaall='find . -type f -exec shasum -a 256 {} \;'
+alias k9s='k9s -A'
+alias ga='git add -A'
+alias gc='git commit -m '
+alias gp='git push'
+alias gacp="git status && git add -A && git commit -m $1 && git push"
+alias allf="find . -type f -name "
+alias alld="find . -type d -name "
+
+alias :q=dummymsg
+alias :q!=dummymsg
+alias :x=dummymsg
+alias :x!=dummymsg
+alias :w=dummymsg
+alias :w!=dummymsg
+function dummymsg() {
+	echo "This is not vim!"
+}
+
+alias ram=replaceallmatches
+function replaceallmatches() {
+	set -x
+	LC_ALL=C find ./ -type f -exec sed -i '' -e s/$1/$2/g {} \;
+	set +x
+}
